@@ -2,11 +2,9 @@
 <!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-	<!-- log4j.rootLogger=DEBUG, stdout 
-log4j.logger.org.mybatis=DEBUG 
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender 
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout 
-log4j.appender.stdout.layout.ConversionPattern=%5p %d %C: %m%n -->
+	<!-- log4j.rootLogger=DEBUG, stdout log4j.logger.org.mybatis=DEBUG log4j.appender.stdout=org.apache.log4j.ConsoleAppender 
+		log4j.appender.stdout.layout=org.apache.log4j.PatternLayout log4j.appender.stdout.layout.ConversionPattern=%5p 
+		%d %C: %m%n -->
 	<!-- Appenders -->
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
@@ -14,12 +12,12 @@ log4j.appender.stdout.layout.ConversionPattern=%5p %d %C: %m%n -->
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-	
+
 
 	<!-- Application Loggers -->
 	<logger name="com.silence.webcontroller">
 		<level value="info" />
-		
+
 	</logger>
 
 	<!-- 3rdparty Loggers -->
