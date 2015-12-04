@@ -11,6 +11,7 @@ public class SpringTest {
 
 	@Test
 	public void test1(){
+		
 	}
 
 }

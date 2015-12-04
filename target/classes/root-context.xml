@@ -10,10 +10,10 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="url" value="jdbc:oracle:thin:@192.168.31.222:1521:orc"></property>
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="username" value="tristan"></property>
-		<property name="password" value="admin"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="username" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 	<bean id="sessionFactroy" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
@@ -22,8 +22,8 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.silence.illustration.pojo.mapper"></property>
-		<property name="sqlSessionFactory" ref="sessionFactroy"></property>
+		<property name="basePackage" value="com.silence.illustration.mapper"></property>
+		<property name="sqlSessionFactoryBeanName" value="sessionFactroy"></property>
 	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
